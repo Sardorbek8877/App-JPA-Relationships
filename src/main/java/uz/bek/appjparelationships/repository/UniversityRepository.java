@@ -6,4 +6,5 @@ import uz.bek.appjparelationships.entity.University;
 
 @Repository
 public interface UniversityRepository extends JpaRepository<University, Integer> {
+
 }
