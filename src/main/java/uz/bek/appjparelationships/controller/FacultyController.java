@@ -88,6 +88,13 @@ public class FacultyController {
         }
         return "Faculty not found";
     }
+
+    //GET FACULTIES FOR UNIVERSITY EMPLOYEE
+    @GetMapping("/byUniversityId/{universityId}")
+    public List<Faculty> getFacultiesByUniversityId(@PathVariable Integer universityId){
+        List<Faculty> allByUniversityId = facultyRepository.findAllByUniversityId(universityId);
+        return allByUniversityId;
+    }
 }
 
 
