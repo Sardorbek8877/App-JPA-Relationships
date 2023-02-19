@@ -49,7 +49,7 @@ public class UniversityController {
 
     //GET UNIVERSITY BY ID
     @RequestMapping(value = "/university/{id}", method = RequestMethod.GET)
-    public University getUniversityById(@PathVariable Integer id){
+    public University getUniversityById(@PathVariable Integer id) {
         Optional<University> optionalUniversity = universityRepository.findById(id);
         if (optionalUniversity.isPresent()){
             University university = optionalUniversity.get();

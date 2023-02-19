@@ -23,6 +23,6 @@ public class Group {
     @ManyToOne   // MANY group TO ONE faculty
     private Faculty faculty;
 
-    @OneToMany  //ONE group TO MANY students
-    private List<Student> students;
+//    @OneToMany  //ONE group TO MANY students
+//    private List<Student> students;
 }
