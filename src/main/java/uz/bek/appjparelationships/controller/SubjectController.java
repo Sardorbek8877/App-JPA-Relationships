@@ -2,7 +2,7 @@ package uz.bek.appjparelationships.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uz.bek.appjparelationships.entity.Subject;
+import uz.bek.appjparelationships.entityUniversity.Subject;
 import uz.bek.appjparelationships.repository.SubjectRepository;
 
 import java.util.List;

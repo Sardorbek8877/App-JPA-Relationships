@@ -1,4 +1,4 @@
-package uz.bek.appjparelationships.entity;
+package uz.bek.appjparelationships.entityUniversity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package uz.bek.appjparelationships.entity;
+package uz.bek.appjparelationships.entityUniversity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,18 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Address {
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name", "university_id"}))
+public class Faculty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
-    private String city;
+    private String name;
 
-    @Column(nullable = false)
-    private String district;
-
-    @Column(nullable = false)
-    private String street;
+    @ManyToOne
+    private University university;
 }

@@ -1,9 +1,10 @@
-package uz.bek.appjparelationships.entity;
+package uz.bek.appjparelationships.entityUniversity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.bek.appjparelationships.entityMap.Address;
 
 import java.util.List;
 

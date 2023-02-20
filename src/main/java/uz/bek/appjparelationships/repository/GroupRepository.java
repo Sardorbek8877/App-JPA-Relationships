@@ -2,8 +2,7 @@ package uz.bek.appjparelationships.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import uz.bek.appjparelationships.entity.Address;
-import uz.bek.appjparelationships.entity.Group;
+import uz.bek.appjparelationships.entityUniversity.Group;
 
 import java.util.List;
 

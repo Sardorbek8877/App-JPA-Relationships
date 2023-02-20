@@ -2,8 +2,8 @@ package uz.bek.appjparelationships.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uz.bek.appjparelationships.entity.Address;
-import uz.bek.appjparelationships.entity.University;
+import uz.bek.appjparelationships.entityMap.Address;
+import uz.bek.appjparelationships.entityUniversity.University;
 import uz.bek.appjparelationships.payload.UniversityDto;
 import uz.bek.appjparelationships.repository.AddressRepository;
 import uz.bek.appjparelationships.repository.UniversityRepository;

@@ -1,16 +1,16 @@
-package uz.bek.appjparelationships.entity;
+package uz.bek.appjparelationships.entityUniversity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.bek.appjparelationships.entityMap.Address;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name", "university_id"}))
-public class Faculty {
+public class University {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,6 @@ public class Faculty {
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne
-    private University university;
+    @OneToOne(optional = false)
+    private Address address;
 }
