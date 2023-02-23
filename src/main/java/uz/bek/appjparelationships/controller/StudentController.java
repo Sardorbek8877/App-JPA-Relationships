@@ -1,6 +1,9 @@
 package uz.bek.appjparelationships.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import uz.bek.appjparelationships.entityMap.Address;
 import uz.bek.appjparelationships.entityUniversity.Group;
@@ -134,6 +137,39 @@ public class StudentController {
         }
 
         return "Student not found";
+    }
+
+
+    // 1. MINISTRY
+    @GetMapping("/forMinistry")
+    public Page<Student> getStudentListForMinistry(@RequestParam int page){
+        Pageable pageable = PageRequest.of(page, 10);
+        Page<Student> studentPage = studentRepository.findAll(pageable);
+        return studentPage;
+    }
+
+    // 2. FOR UNIVERSITY
+    @GetMapping("/forUniversitty/{universityId}")
+    public Page<Student> getStudentListForUniversity(@PathVariable Integer universityId, @RequestParam int page){
+        Pageable pageable = PageRequest.of(page, 10);
+        Page<Student> studentPage = studentRepository.findAllByGroup_Faculty_UniversityId(universityId,pageable);
+        return studentPage;
+    }
+
+    // 3. FOR FACULTY
+    @GetMapping("/forFaculty/{facultyId}")
+    public Page<Student> getStudentForFaculty(@PathVariable Integer facultyId, @RequestParam int page){
+        Pageable pageable = PageRequest.of(page, 10);
+        Page<Student> studentPage = studentRepository.findAllByGroup_FacultyId(facultyId, pageable);
+        return studentPage;
+    }
+
+    // 4. FOR GROUP
+    @GetMapping("/forGroup/{groupId}")
+    public Page<Student> getStudentForGroup(@PathVariable Integer groupId, @RequestParam int page){
+        Pageable pageable = PageRequest.of(page, 10);
+        Page<Student> allByGroupId = studentRepository.findAllByGroupId(groupId, pageable);
+        return allByGroupId;
     }
 }
 
